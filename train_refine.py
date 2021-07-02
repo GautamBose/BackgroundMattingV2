@@ -160,8 +160,8 @@ def train_worker(rank, addr, port):
     
     # Logging and checkpoints
     if rank == 0:
-        if not os.path.exists(f'checkpoint/{args.model_name}'):
-            os.makedirs(f'checkpoint/{args.model_name}')
+        if not os.path.exists(f'/content/drive/MyDrive/BackgroundMatting Training Data/checkpoints/checkpoint/{args.model_name}'):
+            os.makedirs(f'/content/drive/MyDrive/BackgroundMatting Training Data/checkpoints/checkpoint/{args.model_name}')
         writer = SummaryWriter(f'log/{args.model_name}')
     
     # Run loop
@@ -235,10 +235,10 @@ def train_worker(rank, addr, port):
                     valid(model, dataloader_valid, writer, step)
 
                 if (step + 1) % args.checkpoint_interval == 0:
-                    torch.save(model.state_dict(), f'checkpoint/{args.model_name}/epoch-{epoch}-iter-{step}.pth')
+                    torch.save(model.state_dict(), f'/content/drive/MyDrive/BackgroundMatting Training Data/checkpoints/checkpoint/{args.model_name}/epoch-{epoch}-iter-{step}.pth')
                     
         if rank == 0:
-            torch.save(model.state_dict(), f'checkpoint/{args.model_name}/epoch-{epoch}.pth')
+            torch.save(model.state_dict(), f'/content/drive/MyDrive/BackgroundMatting Training Data/checkpoints/checkpoint/{args.model_name}/epoch-{epoch}.pth')
             
     # Clean up
     dist.destroy_process_group()

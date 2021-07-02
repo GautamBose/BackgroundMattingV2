@@ -21,48 +21,20 @@ dataset to the list as long as it follows the format. 'fgr' should point to fore
 """
 
 DATA_PATH = {
-    'videomatte240k': {
+    'sketches': {
         'train': {
-            'fgr': 'PATH_TO_IMAGES_DIR',
-            'pha': 'PATH_TO_IMAGES_DIR'
+            'fgr': 'sketches/train/fgr',
+            'pha': 'sketches/train/pha'
         },
         'valid': {
-            'fgr': 'PATH_TO_IMAGES_DIR',
-            'pha': 'PATH_TO_IMAGES_DIR'
+            'fgr': 'sketches/test/fgr',
+            'pha': 'sketches/test/pha'
         }
     },
-    'photomatte13k': {
-        'train': {
-            'fgr': 'PATH_TO_IMAGES_DIR',
-            'pha': 'PATH_TO_IMAGES_DIR'
-        },
-        'valid': {
-            'fgr': 'PATH_TO_IMAGES_DIR',
-            'pha': 'PATH_TO_IMAGES_DIR'
-        }
-    },
-    'distinction': {
-        'train': {
-            'fgr': 'PATH_TO_IMAGES_DIR',
-            'pha': 'PATH_TO_IMAGES_DIR',
-        },
-        'valid': {
-            'fgr': 'PATH_TO_IMAGES_DIR',
-            'pha': 'PATH_TO_IMAGES_DIR'
-        },
-    },
-    'adobe': {
-        'train': {
-            'fgr': 'PATH_TO_IMAGES_DIR',
-            'pha': 'PATH_TO_IMAGES_DIR',
-        },
-        'valid': {
-            'fgr': 'PATH_TO_IMAGES_DIR',
-            'pha': 'PATH_TO_IMAGES_DIR'
-        },
-    },
+ 
     'backgrounds': {
-        'train': 'PATH_TO_IMAGES_DIR',
-        'valid': 'PATH_TO_IMAGES_DIR'
+        'train': 'backgrounds/train',
+        'valid': 'backgrounds/valid'
     },
 }
+ 
